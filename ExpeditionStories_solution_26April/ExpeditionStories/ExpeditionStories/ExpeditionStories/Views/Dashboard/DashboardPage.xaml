@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExpeditionStories.Views.Dashboard.DashboardPage"
+             xmlns:local="clr-namespace:ExpeditionStories.Views.Common" 
+             xmlns:renderer="clr-namespace:ExpeditionStories.Helpers.Renderers"
+             Title="Trip">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="{Binding StartTripText}" Command="{Binding StartButtonCommand}"></Button>
+            <ListView x:Name="ListViewOfTrip" HasUnevenRows="True" ItemsSource="{Binding ListOfLocations}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="15,0">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="count"></Label>
+                                    <Label Text="{Binding count}"></Label>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="count"></Label>
+                                    <Label Text="count"></Label>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="count"></Label>
+                                    <Label Text="count"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="{Binding EndTripText}" Command="{Binding EndButtonCommand}" VerticalOptions="End"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</local:BaseContentPage>
